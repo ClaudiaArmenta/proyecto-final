@@ -1,9 +1,16 @@
 # Alumno : Claudia Sarahi Armenta Maya 
 # Matricula : A01378067
+
 import xlrd
 # importa la clase que sea el punto de partida de tu solucion
 
 class MiCatalogo:
+    def __init__(self):
+        self.peliculas=[]
+        self.series=[]
+    def mostrar_menu(self):
+        while 
+    
     def abrir(self):
         filepath="/Users/sara/Documents/GitHub/proyectointegrador-SarahiArmenta/BasePelículas.xlsx"
         workbook=xlrd.open_workbook(filepath)
@@ -19,9 +26,8 @@ class MiCatalogo:
             else: 
                 fecha=(sheet.cell_value(i,5))
                 id_pelicula=(sheet.cell_value(i,0))
-                print(id_pelicula)
                 print(fecha)
-
+                print(id_pelicula)
 if __name__ == "__main__":
     streaming = MiCatalogo()
     streaming.abrir()
