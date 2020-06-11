@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 class Video(ABC):
-    def __init__(self,nombre,iD,calificacion,duracion,fecha):
+    def __init__(self,iD,nombre,duracion,calificacion,fecha):
         self.name=nombre
         self.i_d=iD
         self.calif=calificacion

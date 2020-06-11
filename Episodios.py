@@ -1,27 +1,32 @@
 from Video import Video
 class Episodio(Video):
-    def __init__(self,nombre,iD,calificacion,duracion,fecha,temporada,episodio):
-        super().__init__(nombre,iD,calificacion,duracion,fecha)
+    def __init__(self,iD,nombre,duracion,calificacion,fecha,temporada,episodio):
+        super().__init__(iD,nombre,duracion,calificacion,fecha)
         self.tem=temporada
         self.epi=episodio
 
+    def getID(self):
+        return self.i_d
+
     def mostrar_video(self):
-        return f'el episodio se llama: {self.name},su ID es {self.i_d}, tiene una calificacion de {self.calif}\ndura {self.duration}\
- y se estreno el {self.date}\nde la temporada nº {self.tem} y el episodio es el nº {self.epi}'
+        return f' {self.name}    {self.i_d}    {self.calif}    {self.duration}    {self.date}    {self.tem}    {self.epi}'
 
     def __gt__(self,n):
         return self.calif > n 
+
+    def __eq__(self,nombre):
+        if (nombre==self.name):
+            return True
 
     def calificar(self,nombre,nc):
         if (self.name == nombre):
             self.calif=nc
 
     def __str__(self):
-        return f'el episodio se llama: {self.name},su ID es {self.i_d}, tiene una calificacion de {self.calif}\ndura {self.duration}\
- y se estreno el {self.date}\nde la temporada nº {self.tem} y el episodio es el nº {self.epi}'
+        return f' {self.name}    {self.i_d}    {self.calif}    {self.duration}    {self.date}    {self.tem}    {self.epi}'
 
 if __name__=='__main__':
-    e = Episodio('piloto','t2343', 7 ,'1 hr','27/2',1,1)
+    e = Episodio('t2343','piloto','1 hr',7,'27/2',1,1)
     print(e.mostrar_video())
     e.calificar('piloto',9)
     print(e>7)
